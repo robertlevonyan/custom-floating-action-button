@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomFloatingActionButton">
+        <attr name="fabType" format="enum">
+            <enum name="circle" value="0" />
+            <enum name="square" value="1" />
+            <enum name="roundedSquare" value="2" />
+        </attr>
+        <attr name="fabSizes" format="enum">
+            <enum name="normal" value="10" />
+            <enum name="mini" value="11" />
+        </attr>
+        <attr name="fabText" format="string" />
+        <attr name="fabTextAllCaps" format="boolean" />
+        <attr name="fabTextColor" format="color" />
+        <attr name="fabElevation" format="float" />
+        <attr name="fabColor" format="color" />
+        <attr name="fabIcon" format="integer" />
+        <attr name="fabIconColor" format="color" />
+        <attr name="fabIconPosition" format="enum">
+            <enum name="start" value="30" />
+            <enum name="top" value="31" />
+            <enum name="end" value="32" />
+            <enum name="bottom" value="33" />
+        </attr>
+    </declare-styleable>
+</resources>
