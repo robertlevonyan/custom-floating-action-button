@@ -243,7 +243,11 @@ public class CustomFloatingActionButton extends FrameLayout {
         }
 
         if (fabBGDrawable != null) {
-            fabBGDrawable = CustomFloatingActionButtonUtils.setDrawableColor(fabBGDrawable, fabColor);
+            if (CustomFloatingActionButtonUtils.setDrawableColor(fabBGDrawable, fabColor) != null) {
+                fabBGDrawable = CustomFloatingActionButtonUtils.setDrawableColor(fabBGDrawable, fabColor);
+            } else {
+                throw new IllegalStateException("Unable init Floating Action Button");
+            }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                 fabShadow.setBackground(fabBGDrawable);
             } else {
@@ -262,7 +266,10 @@ public class CustomFloatingActionButton extends FrameLayout {
     }
 
     private void buildFabShadowIcon() {
-        Drawable fabIconDrawable = CustomFloatingActionButtonUtils.setDrawableColor(fabIcon, fabIconColor);
+        Drawable fabIconDrawable = null;
+        if (CustomFloatingActionButtonUtils.setDrawableColor(fabIcon, fabIconColor) != null) {
+            fabIconDrawable = CustomFloatingActionButtonUtils.setDrawableColor(fabIcon, fabIconColor);
+        }
 
         switch (fabIconPosition) {
             case FAB_ICON_START:
@@ -365,7 +372,11 @@ public class CustomFloatingActionButton extends FrameLayout {
         }
 
         if (fabBGDrawable != null) {
-            fabBGDrawable = CustomFloatingActionButtonUtils.setDrawableColor(fabBGDrawable, fabColor);
+            if (CustomFloatingActionButtonUtils.setDrawableColor(fabBGDrawable, fabColor) != null) {
+                fabBGDrawable = CustomFloatingActionButtonUtils.setDrawableColor(fabBGDrawable, fabColor);
+            } else {
+                throw new IllegalStateException("Unable init Floating Action Button");
+            }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                 fab.setBackground(fabBGDrawable);
             } else {
@@ -378,7 +389,10 @@ public class CustomFloatingActionButton extends FrameLayout {
     }
 
     private void buildFabViewIcon() {
-        Drawable fabIconDrawable = CustomFloatingActionButtonUtils.setDrawableColor(fabIcon, fabIconColor);
+        Drawable fabIconDrawable = null;
+        if (CustomFloatingActionButtonUtils.setDrawableColor(fabIcon, fabIconColor) != null) {
+            fabIconDrawable = CustomFloatingActionButtonUtils.setDrawableColor(fabIcon, fabIconColor);
+        }
 
         switch (fabIconPosition) {
             case FAB_ICON_START:

@@ -14,6 +14,9 @@ class CustomFloatingActionButtonUtils {
     public static final int FAB_ICON_ID = 0x0000911805;
 
     static Drawable setDrawableColor(Drawable icon, int color) {
+        if (icon == null) {
+            return null;
+        }
         icon.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_ATOP));
         return icon;
     }

@@ -30,7 +30,7 @@ dependencies {
 publish {
     groupId = 'com.robertlevonyan.view'
     artifactId = 'CustomFloatingActionButton'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.1'
     desc = 'This view is for replacement of standard Floating Action Button from Google Support Library. It is easy to use, customizable and you can also add text to button'
     licences = ['Apache-2.0']
     website = 'https://github.com/robertlevonyan/materialChipView'
