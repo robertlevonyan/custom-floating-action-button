@@ -21,4 +21,10 @@ class CustomFloatingActionButtonUtils {
         return icon;
     }
 
+    static Drawable resize(Context context, Drawable image) {
+        Bitmap b = ((BitmapDrawable)image).getBitmap();
+        Bitmap bitmapResized = Bitmap.createScaledBitmap(b, (int) context.getResources().getDimension(R.dimen.fab_icon_size), (int) context.getResources().getDimension(R.dimen.fab_icon_size), false);
+        return new BitmapDrawable(context.getResources(), bitmapResized);
+    }
+
 }

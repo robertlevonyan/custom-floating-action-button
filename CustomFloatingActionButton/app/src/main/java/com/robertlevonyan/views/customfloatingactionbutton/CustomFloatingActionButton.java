@@ -271,6 +271,10 @@ public class CustomFloatingActionButton extends FrameLayout {
             fabIconDrawable = CustomFloatingActionButtonUtils.setDrawableColor(fabIcon, fabIconColor);
         }
 
+        if (fabIconDrawable != null) {
+            fabIconDrawable = CustomFloatingActionButtonUtils.resize(getContext(), fabIconDrawable);
+        }
+
         switch (fabIconPosition) {
             case FAB_ICON_START:
                 fabShadow.setCompoundDrawablesWithIntrinsicBounds(fabIconDrawable, null, null, null);
@@ -392,6 +396,10 @@ public class CustomFloatingActionButton extends FrameLayout {
         Drawable fabIconDrawable = null;
         if (CustomFloatingActionButtonUtils.setDrawableColor(fabIcon, fabIconColor) != null) {
             fabIconDrawable = CustomFloatingActionButtonUtils.setDrawableColor(fabIcon, fabIconColor);
+        }
+
+        if (fabIconDrawable != null) {
+            fabIconDrawable = CustomFloatingActionButtonUtils.resize(getContext(), fabIconDrawable);
         }
 
         switch (fabIconPosition) {
