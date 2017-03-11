@@ -65,8 +65,7 @@ Add following line of code to your module(app) level gradle file
             app:fabText="@string/stringRes"
 ```
 
-|![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_text.png)|
-![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_text_mini.png)|
+|![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_text.png)|![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_text_mini.png)|
 |----------------------------------------------------------------------------------------------|-----------|
 
 ```xml
