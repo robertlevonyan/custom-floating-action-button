@@ -1,7 +1,7 @@
 # Custom Floating Action Button
 This view is for replacement of standard Floating Action Button from Google Support Library. It is easy to use, customizable and you can also add text to button
 
-[![Android Arsenal](https://github.com/robertlevonyan/materialChipView/blob/master/Images/aa.png)](https://android-arsenal.com/details/1/5396)
+[![Android Arsenal](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/aa.png)](https://android-arsenal.com/details/1/5396)
 
 ## Setup
 
@@ -41,5 +41,36 @@ Add following line of code to your module(app) level gradle file
     app:fabIconColor="@color/customColor"
 ```
 
-![alt text](https://github.com/robertlevonyan/materialChipView/blob/master/Images/closable.png)
+![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_sample.png)
 
+```xml
+    app:fabSizes="mini"
+```
+
+![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_mini.png)
+
+```xml
+            app:fabType="square"
+```
+
+![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_square.png)
+
+```xml
+            app:fabType="roundedSquare"
+```
+
+![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_rounded.png)
+
+```xml
+            app:fabText="@string/stringRes"
+```
+
+|![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_text.png)|
+![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_text_mini.png)|
+|------------------------------------|-------------------------------|
+
+```xml
+            app:fabIconPosition="end"
+```
+
+![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_position.png)
