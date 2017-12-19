@@ -33,8 +33,9 @@ Add following line of code to your module(app) level gradle file
     android:layout_height="wrap_content"
     android:layout_gravity="bottom|end" />
 ```
-|----------------------|-----------------------------------------------------------------------------------------|
+
 |![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_circle.jpg)|![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_circle_text.jpg)|
+|----------------------|-----------------------------------------------------------------------------------------|
 |![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_rounded_square.jpg)|![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_rounded_square_text.jpg)|
 |![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_square.jpg)|![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_square_text.jpg)|
 
@@ -50,9 +51,9 @@ Add following line of code to your module(app) level gradle file
 </com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingActionLayout>        
 ```
 
-|----------------------------------|----------------------------------|----------------------------------|
 |![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_circle.jpg)|![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_rounded_square.jpg)|
 |![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_square.jpg)|
+|----------------------------------|----------------------------------|----------------------------------|
 
 ```xml
 <com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingLayout
