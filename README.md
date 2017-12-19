@@ -87,6 +87,10 @@ Add following line of code to your module(app) level gradle file
 </com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingLayout>
 ```
 
+|Up                          |Down                   |Right                         |Left                         |
+|----------------------------|-----------------------|------------------------------|-----------------------------|
+|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fl_up.jpg" width="200">|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fl_down.jpg" width="200">|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fl_right.jpg" width="200">|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fl_left.jpg" width="200">|
+
 
 ### Customizing
 
