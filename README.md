@@ -10,7 +10,7 @@ This view is for replacement of standard Floating Action Button from Google Supp
 Add following line of code to your module(app) level gradle file
 
 ```java
-    compile 'com.robertlevonyan.view:CustomFloatingActionButton:2.0.2'
+    compile 'com.robertlevonyan.view:CustomFloatingActionButton:2.0.3'
 ```
 
 #### Maven:
@@ -19,7 +19,7 @@ Add following line of code to your module(app) level gradle file
   <dependency>
     <groupId>com.robertlevonyan.view</groupId>
     <artifactId>CustomFloatingActionButton</artifactId>
-    <version>2.0.2</version>
+    <version>2.0.3</version>
     <type>pom</type>
   </dependency>
 ```
@@ -92,9 +92,6 @@ Add following line of code to your module(app) level gradle file
 |<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fl_up.jpg" width="200">|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fl_down.jpg" width="200">|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fl_right.jpg" width="200">|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fl_left.jpg" width="200">|
 
 ![](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fl_expand_collapse.gif)
-### Customizing
-
-
 
 ### Attributes
 
@@ -115,43 +112,66 @@ Add following line of code to your module(app) level gradle file
 |`app:fabMenuGravity`  |Gravity of menu and items (values: start (default), end, bottom, top, center_horizontal, center_vertical, center)|
 |`app:fabAnimateMenu`  |Flag to animate menu toggle                                                              |
 
+### Customizing from Java
+
+```java
+    floatingActionButton.setFabType();          /* Set button type | FloatingActionButton.FAB_TYPE_CIRCLE, 
+                                                    FloatingActionButton.FAB_TYPE_SQUARE, 
+                                                    FloatingActionButton.FAB_TYPE_ROUNDED_SQUARE */                           
+    floatingActionButton.setFabSize();          /* Set button size | CustomFloatingActionButton.FAB_SIZE_NORMAL, 
+                                                    CustomFloatingActionButton.FAB_SIZE_MINI */
+    floatingActionButton.setFabText();          // Set text label
+    floatingActionButton.setFabTextAllCaps();   // Set label all capitals
+    floatingActionButton.setFabTextColor();     // Change color of label
+    floatingActionButton.setFabElevation();     // Change elevation
+    floatingActionButton.setFabColor();         // Change background color
+    floatingActionButton.setFabIcon();          // Change icon
+    floatingActionButton.setFabIconColor();     // Change icon color
+    floatingActionButton.setFabIconPosition();  /* Change icon position | CustomFloatingActionButton.FAB_ICON_START, 
+                                                    CustomFloatingActionButton.FAB_ICON_TOP,
+                                                    CustomFloatingActionButton.FAB_ICON_END, 
+                                                    CustomFloatingActionButton.FAB_ICON_BOTTOM */
+```
+
+```java
+    floatingActionLayout.setFabType();          /* Set button type | FloatingActionLayout.FAB_TYPE_CIRCLE, 
+                                                    FloatingActionLayout.FAB_TYPE_SQUARE, 
+                                                    FloatingActionLayout.FAB_TYPE_ROUNDED_SQUARE */   
+    floatingActionLayout.setFabElevation();     // Change elevation
+    floatingActionLayout.setFabColor();         // Change background color
+```
+
+```java
+        floatingLayout.setFabAnimationStyle();  /* Set the pop animation of items | FloatingLayout.ANIMATION_POP_UP, 
+                                                    FloatingLayout.ANIMATION_POP_DOWN,
+                                                    FloatingLayout.ANIMATION_POP_RIGHT,
+                                                    FloatingLayout.ANIMATION_POP_LEFT */
+        floatingLayout.setFabMenuGravity();     /* Set gravity of menu items | FloatingLayout.MENU_GRAVITY_START,
+                                                    FloatingLayout.MENU_GRAVITY_END,
+                                                    FloatingLayout.MENU_GRAVITY_BOTTOM,
+                                                    FloatingLayout.MENU_GRAVITY_TOP,
+                                                    FloatingLayout.MENU_GRAVITY_CENTER_HORIZONTAL,
+                                                    FloatingLayout.MENU_GRAVITY_CENTER_VERTICAL,
+                                                    FloatingLayout.MENU_GRAVITY_CENTER */
+```
 ### Setting Listeners
 
 ```java
-    CustomFloatingActionButton customFAB = (CustomFloatingActionButton) findViewById(R.id.custom_fab);
-    
-    customFab.setOnFabClickListener(new OnFabClickListener() {
-        @Override
-        public void onFabClick(View v) {
-            //Your action here...
-        }
-    });
+    floatingLayout.setOnMenuExpandedListener(new FloatingLayout.OnMenuExpandedListener() {
+            @Override
+            public void onMenuExpanded() {
+                // Do stuff when expanded...
+            }
+
+            @Override
+            public void onMenuCollapsed() {
+                // Do stuff when collapsed...
+            }
+        });
 ```
-
-### Customizing Floating Action Button from Java
-
-```java
-    customFAB.setFabType(); /* Set FAB type | CustomFloatingActionButton.FAB_TYPE_CIRCLE, 
-                                              CustomFloatingActionButton.FAB_TYPE_SQUARE, 
-                                              CustomFloatingActionButton.FAB_TYPE_ROUNDED_SQUARE */                                              
-    customFAB.setFabSize(); /* Set FAB size | CustomFloatingActionButton.FAB_SIZE_NORMAL, 
-                                              CustomFloatingActionButton.FAB_SIZE_MINI */
-    customFAB.setFabText(); // Set text label
-    customFAB.setFabTextAllCaps(); // Set label all capitals
-    customFAB.setFabTextColor(); // Change color of label
-    customFAB.setFabElevation(); // Change drop shadow size
-    customFAB.setFabColor(); // Change FAB color
-    customFAB.setFabIcon(); // Change FAB icon
-    customFAB.setFabIconColor(); // Change FAB icon color
-    customFAB.setFabIconPosition(); /* Change FAB icon position | CustomFloatingActionButton.FAB_ICON_START, 
-                                                                  CustomFloatingActionButton.FAB_ICON_TOP,
-                                                                  CustomFloatingActionButton.FAB_ICON_END, 
-                                                                  CustomFloatingActionButton.FAB_ICON_BOTTOM */
-```
-
 ## Versions
 
-###  2.0.0 - 2.0.2
+###  2.0.0 - 2.0.3
 
 Second version of library.
 Totaly rewritten.
