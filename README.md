@@ -35,6 +35,7 @@ Add following line of code to your module(app) level gradle file
 ```
 
 |![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_circle.jpg)|![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_circle_text.jpg)|
+|----------------------|-----------------------------------------------------------------------------------------|
 |![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_rounded_square.jpg)|![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_rounded_square_text.jpg)|
 |![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_square.jpg)|![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_square_text.jpg)|
 
