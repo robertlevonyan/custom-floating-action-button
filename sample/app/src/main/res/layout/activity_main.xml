@@ -21,14 +21,4 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_main" />
-
-    <com.robertlevonyan.views.customfloatingactionbutton.CustomFloatingActionButton
-        android:id="@+id/custom_fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="10dp"
-        app:fabIcon="@drawable/ic_android"
-        app:fabText="Custom FAB"
-        app:fabIconPosition="end"/>
 </android.support.design.widget.CoordinatorLayout>

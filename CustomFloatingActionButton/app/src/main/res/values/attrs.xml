@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="CustomFloatingActionButton">
+    <declare-styleable name="FloatingActionButton">
         <attr name="fabType" format="enum">
             <enum name="circle" value="0" />
             <enum name="square" value="1" />
@@ -13,7 +13,7 @@
         <attr name="fabText" format="string" />
         <attr name="fabTextAllCaps" format="boolean" />
         <attr name="fabTextColor" format="color" />
-        <attr name="fabElevation" format="float" />
+        <attr name="fabElevation" format="dimension" />
         <attr name="fabColor" format="color" />
         <attr name="fabIcon" format="integer" />
         <attr name="fabIconColor" format="color" />
@@ -22,6 +22,21 @@
             <enum name="top" value="31" />
             <enum name="end" value="32" />
             <enum name="bottom" value="33" />
+        </attr>
+        <attr name="fabMenuStyle" format="enum">
+            <enum name="popUp" value="20" />
+            <enum name="popDown" value="21" />
+            <enum name="popRight" value="22" />
+            <enum name="popLeft" value="23" />
+        </attr>
+        <attr name="fabMenuGravity">
+            <flag name="start" value="0" />
+            <flag name="end" value="1" />
+            <flag name="bottom" value="2" />
+            <flag name="top" value="4" />
+            <flag name="center_horizontal" value="8" />
+            <flag name="center_vertical" value="16" />
+            <flag name="center" value="31" />
         </attr>
     </declare-styleable>
 </resources>

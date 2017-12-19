@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="default_margin_for_mini">23dp</dimen>
     <dimen name="fab_progress_default_thickness">5dp</dimen>
-    <dimen name="fab_default_elevation">15dp</dimen>
+    <dimen name="fab_default_elevation">8dp</dimen>
     <dimen name="fab_size_normal">56dp</dimen>
     <dimen name="fab_size_mini">40dp</dimen>
-    <dimen name="fab_circle_radius">28dp</dimen>
+    <dimen name="fab_circle_radius">500dp</dimen>
     <dimen name="fab_rounded_radius">10dp</dimen>
     <dimen name="fab_background_padding">15dp</dimen>
     <dimen name="fab_rounded_square_shadow_translation">7dp</dimen>
     <dimen name="fab_icon_size">24dp</dimen>
     <dimen name="fab_text_horizontal_margin_normal">16dp</dimen>
     <dimen name="fab_text_horizontal_margin_mini">8dp</dimen>
+    <dimen name="fab_step_size">2dp</dimen>
+    <dimen name="fab_menu_item_margin">8dp</dimen>
 </resources>
