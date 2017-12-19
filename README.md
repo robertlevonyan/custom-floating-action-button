@@ -33,6 +33,7 @@ Add following line of code to your module(app) level gradle file
     android:layout_height="wrap_content"
     android:layout_gravity="bottom|end" />
 ```
+|![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_circle.jpg)|![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_circle_text.jpg)
 
 ```xml
 <com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingActionLayout
