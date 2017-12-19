@@ -79,7 +79,7 @@ Add following line of code to your module(app) level gradle file
 ```
 
 
-### Cutomizing
+### Customizing
 
 
 
@@ -92,12 +92,12 @@ Add following line of code to your module(app) level gradle file
 |`app:fabText`         |Text label of Floating Action Button                                                     |
 |`app:fabTextAllCaps`  |Set text label all capitals                                                              |
 |`app:fabTextColor`    |Set custom color for text label                                                          |
-|`app:fabElevation`    |Drop shadow size                                                                         |
+|`app:fabElevation`    |Change the elevation of view                                                             |
 |`app:fabColor`        |Custom color for Floating Action Button (default value is accent color)                  |
 |`app:fabIcon`         |Custom icon for Floating Action Button                                                   |
 |`app:fabIconColor`    |Custom color for icon                                                                    |
 |`app:fabIconPosition` |Icon position for icon (values: start (default), top, end, bottom)                       |
-|----------------------|-----------------------------------------------------------------------------------------|
+|                      |                                                                                         |
 |`app:fabMenuStyle`    |Animation style for items appearing (values: popUp (default), popDown, popRight, popLeft)|
 |`app:fabMenuGravity`  |Gravity of menu and items (values: start (default), end, bottom, top, center_horizontal, center_vertical, center)|
 |`app:fabAnimateMenu`  |Flag to animate menu toggle                                                              |
@@ -137,6 +137,12 @@ Add following line of code to your module(app) level gradle file
 ```
 
 ## Versions
+
+###  2.0.0 - 2.0.2
+
+Second version of library.
+Totaly rewritten.
+Added Floating action layout and Floating layout
 
 ###  1.0.0 - 1.0.3
 
