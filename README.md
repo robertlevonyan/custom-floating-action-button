@@ -10,7 +10,7 @@ This view is for replacement of standard Floating Action Button from Google Supp
 Add following line of code to your module(app) level gradle file
 
 ```java
-    compile 'com.robertlevonyan.view:CustomFloatingActionButton:1.0.3'
+    compile 'com.robertlevonyan.view:CustomFloatingActionButton:2.0.2'
 ```
 
 #### Maven:
@@ -19,7 +19,7 @@ Add following line of code to your module(app) level gradle file
   <dependency>
     <groupId>com.robertlevonyan.view</groupId>
     <artifactId>CustomFloatingActionButton</artifactId>
-    <version>1.0.3</version>
+    <version>2.0.2</version>
     <type>pom</type>
   </dependency>
 ```
@@ -27,67 +27,80 @@ Add following line of code to your module(app) level gradle file
 ## Usage
 
 ```xml
-  <com.robertlevonyan.views.customfloatingactionbutton.CustomFloatingActionButton
+  <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
     android:id="@+id/custom_fab"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="bottom|end" />
 ```
 
-### Cutomizing Floating Action Button
-
 ```xml
-    app:fabIcon="@drawable/customIcon"
-    app:fabIconColor="@color/customColor"
+<com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingActionLayout
+        android:id="@+id/customFABL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+        
+        <!--Add any layout here-->
+        
+</com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingActionLayout>        
 ```
 
-![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_sample.png)
-
 ```xml
-    app:fabSizes="mini"
+<com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingLayout
+        android:id="@+id/floating_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <!--
+        Add here only 
+        com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingActionButton 
+        or android.support.design.widget.FloatingActionButton,
+        other views will be neglected by the layout
+        -->
+        
+        <!--Top view will be selected as a toggle for menu-->
+        <com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingActionButton 
+        ... />
+        
+        <com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingActionButton 
+        ... />
+        
+        <com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingActionButton 
+        ... />
+        
+        <com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingActionButton 
+        ... />
+        
+        <android.support.design.widget.FloatingActionButton
+        ... />
+        
+</com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingLayout>
 ```
 
-![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_mini.png)
 
-```xml
-            app:fabType="square"
-```
+### Customizing
 
-![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_square.png)
 
-```xml
-            app:fabType="roundedSquare"
-```
-
-![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_rounded.png)
-
-```xml
-            app:fabText="@string/stringRes"
-```
-
-|![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_text.png)|![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_text_mini.png)|
-|----------------------------------------------------------------------------------------------|-----------|
-
-```xml
-            app:fabIconPosition="end"
-```
-
-![alt text](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_position.png)
 
 ### Attributes
 
-|Custom Atributes      |Description                                                                             |
-|----------------------|----------------------------------------------------------------------------------------|
-|`app:fabType`         |Visual style of Floating Action Button (values: circle (default), square, roundedSquare)|
-|`app:fabSizes`        |Sizes of Floating Action Button (values: normal (default), mini)                        |
-|`app:fabText`         |Text label of Floating Action Button                                                    |
-|`app:fabTextAllCaps`  |Set text label all capitals                                                             |
-|`app:fabTextColor`    |Set custom color for text label                                                         |
-|`app:fabElevation`    |Drop shadow size                                                                        |
-|`app:fabColor`        |Custom color for Floating Action Button (default value is accent color)                 |
-|`app:fabIcon`         |Custom icon for Floating Action Button                                                  |
-|`app:fabIconColor`    |Custom color for icon                                                                   |
-|`app:fabIconPosition` |Icon position for icon (values: start (default), top, end, bottom)                      |
+|Custom Atributes      |Description                                                                              |
+|----------------------|-----------------------------------------------------------------------------------------|
+|`app:fabType`         |Visual style of Floating Action Button (values: circle (default), square, roundedSquare) |
+|`app:fabSizes`        |Sizes of Floating Action Button (values: normal (default), mini)                         |
+|`app:fabText`         |Text label of Floating Action Button                                                     |
+|`app:fabTextAllCaps`  |Set text label all capitals                                                              |
+|`app:fabTextColor`    |Set custom color for text label                                                          |
+|`app:fabElevation`    |Change the elevation of view                                                             |
+|`app:fabColor`        |Custom color for Floating Action Button (default value is accent color)                  |
+|`app:fabIcon`         |Custom icon for Floating Action Button                                                   |
+|`app:fabIconColor`    |Custom color for icon                                                                    |
+|`app:fabIconPosition` |Icon position for icon (values: start (default), top, end, bottom)                       |
+|                      |                                                                                         |
+|`app:fabMenuStyle`    |Animation style for items appearing (values: popUp (default), popDown, popRight, popLeft)|
+|`app:fabMenuGravity`  |Gravity of menu and items (values: start (default), end, bottom, top, center_horizontal, center_vertical, center)|
+|`app:fabAnimateMenu`  |Flag to animate menu toggle                                                              |
 
 ### Setting Listeners
 
@@ -124,6 +137,12 @@ Add following line of code to your module(app) level gradle file
 ```
 
 ## Versions
+
+###  2.0.0 - 2.0.2
+
+Second version of library.
+Totaly rewritten.
+Added Floating action layout and Floating layout
 
 ###  1.0.0 - 1.0.3
 
