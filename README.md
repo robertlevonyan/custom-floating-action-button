@@ -50,10 +50,6 @@ Add following line of code to your module(app) level gradle file
 </com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingActionLayout>        
 ```
 
-|----------------------------------|----------------------------------|----------------------------------|
-|![FAB](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_circle.jpg)|![FAB](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_rounded_square.jpg)|
-|![FAB](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_square.jpg)|
-
 
 ```xml
 <com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingLayout
