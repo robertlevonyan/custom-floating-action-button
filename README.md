@@ -10,7 +10,7 @@ This view is for replacement of standard Floating Action Button from Google Supp
 Add following line of code to your module(app) level gradle file
 
 ```java
-    compile 'com.robertlevonyan.view:CustomFloatingActionButton:1.0.3'
+    compile 'com.robertlevonyan.view:CustomFloatingActionButton:2.0.2'
 ```
 
 #### Maven:
@@ -19,7 +19,7 @@ Add following line of code to your module(app) level gradle file
   <dependency>
     <groupId>com.robertlevonyan.view</groupId>
     <artifactId>CustomFloatingActionButton</artifactId>
-    <version>1.0.3</version>
+    <version>2.0.1</version>
     <type>pom</type>
   </dependency>
 ```
@@ -27,7 +27,7 @@ Add following line of code to your module(app) level gradle file
 ## Usage
 
 ```xml
-  <com.robertlevonyan.views.customfloatingactionbutton.CustomFloatingActionButton
+  <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
     android:id="@+id/custom_fab"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
