@@ -52,8 +52,7 @@ Add following line of code to your module(app) level gradle file
 ```
 
 |![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_circle.jpg)|![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_rounded_square.jpg)|
-|![Circle](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_square.jpg)|
-|----------------------------------|----------------------------------|----------------------------------|
+|----------------------------------|--------------------------------------------------------------------|
 
 ```xml
 <com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingLayout
