@@ -256,6 +256,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
 
     public void setFabType(int fabType) {
         this.fabType = fabType;
+        buildView();
     }
 
     public int getFabSize() {
@@ -264,6 +265,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
 
     public void setFabSize(int fabSize) {
         this.fabSize = fabSize;
+        buildView();
     }
 
     public String getFabText() {
@@ -272,6 +274,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
 
     public void setFabText(String fabText) {
         this.fabText = fabText;
+        buildView();
     }
 
     public boolean isFabTextAllCaps() {
@@ -280,6 +283,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
 
     public void setFabTextAllCaps(boolean fabTextAllCaps) {
         this.fabTextAllCaps = fabTextAllCaps;
+        buildView();
     }
 
     public int getFabTextColor() {
@@ -288,6 +292,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
 
     public void setFabTextColor(int fabTextColor) {
         this.fabTextColor = fabTextColor;
+        buildView();
     }
 
     public float getFabElevation() {
@@ -296,6 +301,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
 
     public void setFabElevation(float fabElevation) {
         this.fabElevation = fabElevation;
+        buildView();
     }
 
     public int getFabColor() {
@@ -304,6 +310,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
 
     public void setFabColor(int fabColor) {
         this.fabColor = fabColor;
+        buildView();
     }
 
     public Drawable getFabIcon() {
@@ -312,6 +319,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
 
     public void setFabIcon(Drawable fabIcon) {
         this.fabIcon = fabIcon;
+        buildView();
     }
 
     public int getFabIconColor() {
@@ -320,6 +328,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
 
     public void setFabIconColor(int fabIconColor) {
         this.fabIconColor = fabIconColor;
+        buildView();
     }
 
     public int getFabIconPosition() {
@@ -328,6 +337,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
 
     public void setFabIconPosition(int fabIconPosition) {
         this.fabIconPosition = fabIconPosition;
+        buildView();
     }
 
 }
