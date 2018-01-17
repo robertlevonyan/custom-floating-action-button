@@ -2,7 +2,7 @@
 This view is for replacement of standard Floating Action Button from Google Support Library. It is easy to use, customizable and you can also add text to button
 
 <!--- [![Android Arsenal](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/aa.png)](https://android-arsenal.com/details/1/5396)--->
-
+[ ![Download](https://api.bintray.com/packages/robertlevonyan/maven/CustomFloatingActionButton/images/download.svg) ](https://bintray.com/robertlevonyan/maven/CustomFloatingActionButton/_latestVersion)
 ## Setup
 
 #### Gradle:
