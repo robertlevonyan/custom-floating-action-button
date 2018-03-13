@@ -54,7 +54,7 @@ Add following line of code to your module(app) level gradle file
 
 |Circle layout                          |Rounded square layout                   |Square layout                         |
 |---------------------------------------|----------------------------------------|--------------------------------------|
-|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_circle.jpg_2" width="250">|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_rounded_square_2.jpg" width="250">|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_square_2.jpg" width="250">|
+|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_circle_2.jpg" width="250">|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_rounded_square_2.jpg" width="250">|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_square_2.jpg" width="250">|
 
 ```xml
 <com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingLayout
