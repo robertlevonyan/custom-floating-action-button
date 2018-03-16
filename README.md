@@ -182,6 +182,15 @@ Added Floating action layout and Floating layout
 
 First version of library with some bugfixes
 
+## Contact
+
+- **Email**: me@robertlevonyan.com
+- **Website**: https://robertlevonyan.com/
+- **Medium**: https://medium.com/@RobertLevonyan
+- **Twitter**: https://twitter.com/@RobertLevonyan
+- **Facebook**: https://facebook.com/robert.levonyan
+- **Google Play**: https://play.google.com/store/apps/dev?id=5477562049350283357
+
 ## Licence
 
 ```
