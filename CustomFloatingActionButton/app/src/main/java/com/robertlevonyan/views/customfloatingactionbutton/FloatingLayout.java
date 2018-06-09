@@ -41,6 +41,7 @@ public class FloatingLayout extends FrameLayout {
 
     private boolean isCreated;
     private boolean isExpanded;
+    private boolean isAnimating = false;
     private ArrayList<View> views = new ArrayList<>();
 
     private boolean isGravityStart;
@@ -196,12 +197,15 @@ public class FloatingLayout extends FrameLayout {
         toggleView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (isAnimating) {
+                    return;
+                }
+
                 if (isExpanded) {
                     collapseViews();
                 } else {
                     expandViews();
                 }
-                isExpanded = !isExpanded;
             }
         });
     }
@@ -231,6 +235,7 @@ public class FloatingLayout extends FrameLayout {
 
     private void animatePopDownCollapse() {
         ArrayList<Animator> animators = new ArrayList<>();
+        isAnimating = true;
         for (int i = views.size() - 1; i > 0; i--) {
             final View view = views.get(i);
             float animationSize = 160f;
@@ -254,6 +259,8 @@ public class FloatingLayout extends FrameLayout {
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
 
+                isAnimating = false;
+                isExpanded = !isExpanded;
                 if (onMenuExpandedListener != null) {
                     onMenuExpandedListener.onMenuCollapsed();
                 }
@@ -265,6 +272,7 @@ public class FloatingLayout extends FrameLayout {
 
     private void animatePopRightCollapse() {
         ArrayList<Animator> animators = new ArrayList<>();
+        isAnimating = true;
         for (int i = views.size() - 1; i > 0; i--) {
             final View view = views.get(i);
             float animationSize = 160f;
@@ -288,6 +296,8 @@ public class FloatingLayout extends FrameLayout {
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
 
+                isAnimating = false;
+                isExpanded = !isExpanded;
                 if (onMenuExpandedListener != null) {
                     onMenuExpandedListener.onMenuCollapsed();
                 }
@@ -299,6 +309,7 @@ public class FloatingLayout extends FrameLayout {
 
     private void animatePopLeftCollapse() {
         ArrayList<Animator> animators = new ArrayList<>();
+        isAnimating = true;
         for (int i = views.size() - 1; i > 0; i--) {
             final View view = views.get(i);
             float animationSize = 160f;
@@ -322,6 +333,8 @@ public class FloatingLayout extends FrameLayout {
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
 
+                isAnimating = false;
+                isExpanded = !isExpanded;
                 if (onMenuExpandedListener != null) {
                     onMenuExpandedListener.onMenuCollapsed();
                 }
@@ -333,6 +346,7 @@ public class FloatingLayout extends FrameLayout {
 
     private void animatePopUpCollapse() {
         ArrayList<Animator> animators = new ArrayList<>();
+        isAnimating = true;
         for (int i = views.size() - 1; i > 0; i--) {
             final View view = views.get(i);
             float animationSize = 160f;
@@ -356,6 +370,8 @@ public class FloatingLayout extends FrameLayout {
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
 
+                isAnimating = false;
+                isExpanded = !isExpanded;
                 if (onMenuExpandedListener != null) {
                     onMenuExpandedListener.onMenuCollapsed();
                 }
@@ -389,6 +405,7 @@ public class FloatingLayout extends FrameLayout {
 
     private void animatePopDownExpand() {
         ArrayList<Animator> animators = new ArrayList<>();
+        isAnimating = true;
         for (int i = 1; i < views.size(); i++) {
             final View view = views.get(i);
             float animationSize = 160f;
@@ -412,6 +429,8 @@ public class FloatingLayout extends FrameLayout {
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
 
+                isAnimating = false;
+                isExpanded = !isExpanded;
                 if (onMenuExpandedListener != null) {
                     onMenuExpandedListener.onMenuExpanded();
                 }
@@ -423,6 +442,7 @@ public class FloatingLayout extends FrameLayout {
 
     private void animatePopRightExpand() {
         ArrayList<Animator> animators = new ArrayList<>();
+        isAnimating = true;
         for (int i = 1; i < views.size(); i++) {
             final View view = views.get(i);
             float animationSize = 160f;
@@ -446,6 +466,8 @@ public class FloatingLayout extends FrameLayout {
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
 
+                isAnimating = false;
+                isExpanded = !isExpanded;
                 if (onMenuExpandedListener != null) {
                     onMenuExpandedListener.onMenuExpanded();
                 }
@@ -457,6 +479,7 @@ public class FloatingLayout extends FrameLayout {
 
     private void animatePopLeftExpand() {
         ArrayList<Animator> animators = new ArrayList<>();
+        isAnimating = true;
         for (int i = 1; i < views.size(); i++) {
             final View view = views.get(i);
             float animationSize = 160f;
@@ -480,6 +503,8 @@ public class FloatingLayout extends FrameLayout {
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
 
+                isAnimating = false;
+                isExpanded = !isExpanded;
                 if (onMenuExpandedListener != null) {
                     onMenuExpandedListener.onMenuExpanded();
                 }
@@ -491,6 +516,7 @@ public class FloatingLayout extends FrameLayout {
 
     private void animatePopUpExpand() {
         ArrayList<Animator> animators = new ArrayList<>();
+        isAnimating = true;
         for (int i = 1; i < views.size(); i++) {
             final View view = views.get(i);
             float animationSize = 160f;
@@ -514,6 +540,8 @@ public class FloatingLayout extends FrameLayout {
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
 
+                isAnimating = false;
+                isExpanded = !isExpanded;
                 if (onMenuExpandedListener != null) {
                     onMenuExpandedListener.onMenuExpanded();
                 }
