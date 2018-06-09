@@ -38,7 +38,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
 
     private int fabType;
     private int fabSize;
-    private String fabText;
+    private String fabText = "";
     private boolean fabTextAllCaps;
     private int fabTextColor;
     private float fabElevation;
@@ -108,7 +108,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
         backgroundDrawable.mutate().setColorFilter(fabColor, PorterDuff.Mode.SRC_IN);
 
         Drawable selectableDrawable;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             selectableDrawable = new RippleDrawable(ColorStateList.valueOf(Color.argb(150, 255, 255, 255)),
                     null, backgroundDrawable);
         } else {
@@ -165,7 +165,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
     }
 
     private void initFabText() {
-        if (fabText == null || fabText.length() == 0) {
+        if (fabText == null || fabText.isEmpty()) {
             return;
         }
 
@@ -197,7 +197,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
 
         ViewGroup.LayoutParams thisParams = getLayoutParams();
 
-        boolean noText = fabText == null || fabText.length() == 0;
+        boolean noText = fabText == null || fabText.isEmpty();
         boolean topBottom = fabIconPosition == FAB_ICON_TOP || fabIconPosition == FAB_ICON_BOTTOM;
 
         if (fabSize == FAB_SIZE_MINI) {
