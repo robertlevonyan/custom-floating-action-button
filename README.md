@@ -11,7 +11,7 @@
 Add following line of code to your module(app) level gradle file
 
 ```java
-    implementation 'com.robertlevonyan.view:CustomFloatingActionButton:2.0.6'
+    implementation 'com.robertlevonyan.view:CustomFloatingActionButton:2.0.7'
 ```
 
 #### Maven:
