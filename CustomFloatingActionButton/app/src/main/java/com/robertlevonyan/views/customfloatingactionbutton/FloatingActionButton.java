@@ -75,7 +75,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
         fabElevation = ta.getDimension(R.styleable.FloatingActionButton_fabElevation, getResources().getDimension(R.dimen.fab_default_elevation));
         fabColor = ta.getColor(R.styleable.FloatingActionButton_fabColor, ContextCompat.getColor(getContext(), R.color.colorAccent));
         fabIcon = ta.getDrawable(R.styleable.FloatingActionButton_fabIcon);
-        fabIconColor = ta.getColor(R.styleable.FloatingActionButton_fabIconColor, ContextCompat.getColor(getContext(), R.color.colorFabIcon));
+        fabIconColor = ta.getColor(R.styleable.FloatingActionButton_fabIconColor, -1);
 
         ta.recycle();
     }
@@ -87,8 +87,9 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
         initFabIconColor();
         initFabIconPosition();
         initFabText();
-        initFabPadding();
         initFabShadow();
+        createSize();
+        initFabPadding();
     }
 
     private void initFabBackground() {
@@ -133,7 +134,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
     }
 
     private void initFabIconColor() {
-        if (fabIcon != null) {
+        if (fabIcon != null && fabIconColor != -1) {
             fabIcon.mutate().setColorFilter(fabIconColor, PorterDuff.Mode.SRC_IN);
         }
     }
@@ -181,10 +182,27 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
     }
 
     private void initFabPadding() {
+        int iconWidth = fabIcon != null ? fabIcon.getIntrinsicWidth() : 0;
+        int iconHeight = fabIcon != null ? fabIcon.getIntrinsicHeight() : 0;
+
         int paddingSize = fabSize == FAB_SIZE_MINI
                 ? getResources().getDimensionPixelSize(R.dimen.fab_text_horizontal_margin_mini)
                 : getResources().getDimensionPixelSize(R.dimen.fab_text_horizontal_margin_normal);
-        setPadding(paddingSize, paddingSize, paddingSize, paddingSize);
+
+        int normalSize = getResources().getDimensionPixelSize(R.dimen.fab_size_normal);
+        int miniSize = getResources().getDimensionPixelSize(R.dimen.fab_size_mini);
+
+        int horizontalPadding = iconWidth == 0 ? paddingSize
+                : (fabSize == FAB_SIZE_MINI ? (miniSize - iconWidth) / 2 : (normalSize - iconWidth) / 2);
+        int verticalPadding = iconHeight == 0 ? paddingSize
+                : (fabSize == FAB_SIZE_MINI ? (miniSize - iconHeight) / 2 : (normalSize - iconHeight) / 2);
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            setPaddingRelative(horizontalPadding, verticalPadding, horizontalPadding * 2, verticalPadding);
+        } else {
+            setPadding(paddingSize, paddingSize, paddingSize, paddingSize);
+        }
     }
 
     private void initFabShadow() {
@@ -194,11 +212,17 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        createSize();
+    }
 
+    private void createSize() {
         ViewGroup.LayoutParams thisParams = getLayoutParams();
 
         boolean noText = fabText == null || fabText.isEmpty();
         boolean topBottom = fabIconPosition == FAB_ICON_TOP || fabIconPosition == FAB_ICON_BOTTOM;
+        int paddingSize = fabSize == FAB_SIZE_MINI
+                ? getResources().getDimensionPixelSize(R.dimen.fab_text_horizontal_margin_mini)
+                : getResources().getDimensionPixelSize(R.dimen.fab_text_horizontal_margin_normal);
 
         if (fabSize == FAB_SIZE_MINI) {
             setMinHeight(getResources().getDimensionPixelSize(R.dimen.fab_size_mini));
@@ -206,6 +230,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
             if (noText) {
                 thisParams.width = getResources().getDimensionPixelSize(R.dimen.fab_size_mini);
                 thisParams.height = getResources().getDimensionPixelSize(R.dimen.fab_size_mini);
+//                setCompoundDrawablePadding(paddingSize);
             } else {
                 thisParams.width = ViewGroup.LayoutParams.WRAP_CONTENT;
                 if (topBottom) {
@@ -220,6 +245,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
             if (noText) {
                 thisParams.width = getResources().getDimensionPixelSize(R.dimen.fab_size_normal);
                 thisParams.height = getResources().getDimensionPixelSize(R.dimen.fab_size_normal);
+//                setCompoundDrawablePadding(paddingSize);
             } else {
                 thisParams.width = ViewGroup.LayoutParams.WRAP_CONTENT;
                 if (topBottom) {
@@ -233,6 +259,7 @@ public class FloatingActionButton extends android.support.v7.widget.AppCompatTex
 
         this.setLayoutParams(thisParams);
     }
+
 
     @Override
     protected void onAttachedToWindow() {
