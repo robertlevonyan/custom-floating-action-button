@@ -11,7 +11,7 @@
 Add following line of code to your module(app) level gradle file
 
 ```java
-    implementation 'com.robertlevonyan.view:CustomFloatingActionButton:2.1.0'
+    implementation 'com.robertlevonyan.view:CustomFloatingActionButton:2.1.1'
 ```
 
 #### Maven:
@@ -107,6 +107,7 @@ Add following line of code to your module(app) level gradle file
 |`app:fabColor`        |Custom color for Floating Action Button (default value is accent color)                  |
 |`app:fabIcon`         |Custom icon for Floating Action Button                                                   |
 |`app:fabIconColor`    |Custom color for icon                                                                    |
+|`app:fabRippleColor`  |Custom ripple color for button                                                           |
 |`app:fabIconPosition` |Icon position for icon (values: start (default), top, end, bottom)                       |
 |                      |                                                                                         |
 |`app:fabMenuStyle`    |Animation style for items appearing (values: popUp (default), popDown, popRight, popLeft)|
