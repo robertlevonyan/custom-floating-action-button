@@ -3,7 +3,7 @@
 |This view is for replacement of standard Floating Action Button from Google Support Library. It is easy to use, customizable and you can also add text to button|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab.png"  width="900" />|
 |----------------------------------------------------------------------------------------------|-----------|
 
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Custom%20Floating%20Action%20Button-yellow.svg?style=flat-square)](https://android-arsenal.com/details/1/6570) [![API](https://img.shields.io/badge/API-14%2B-yellow.svg?style=flat-square)](https://android-arsenal.com/api?level=14) [ ![Download](https://api.bintray.com/packages/robertlevonyan/maven/CustomFloatingActionButton/images/download.svg) ](https://bintray.com/robertlevonyan/maven/CustomFloatingActionButton/_latestVersion)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Custom%20Floating%20Action%20Button-yellow.svg?style=flat-square)](https://android-arsenal.com/details/1/6570) [![API](https://img.shields.io/badge/API-17%2B-yellow.svg?style=flat-square)](https://android-arsenal.com/api?level=14) [ ![Download](https://api.bintray.com/packages/robertlevonyan/maven/CustomFloatingActionButton/images/download.svg) ](https://bintray.com/robertlevonyan/maven/CustomFloatingActionButton/_latestVersion)
 ## Setup
 
 #### Gradle:
@@ -11,7 +11,7 @@
 Add following line of code to your module(app) level gradle file
 
 ```java
-    implementation 'com.robertlevonyan.view:CustomFloatingActionButton:2.0.4'
+    implementation 'com.robertlevonyan.view:CustomFloatingActionButton:3.0.0'
 ```
 
 #### Maven:
@@ -20,7 +20,7 @@ Add following line of code to your module(app) level gradle file
   <dependency>
     <groupId>com.robertlevonyan.view</groupId>
     <artifactId>CustomFloatingActionButton</artifactId>
-    <version>2.0.4</version>
+    <version>3.0.0</version>
     <type>pom</type>
   </dependency>
 ```
@@ -96,68 +96,64 @@ Add following line of code to your module(app) level gradle file
 
 ### Attributes
 
-|Custom Atributes      |Description                                                                              |
-|----------------------|-----------------------------------------------------------------------------------------|
-|`app:fabType`         |Visual style of Floating Action Button (values: circle (default), square, roundedSquare) |
-|`app:fabSizes`        |Sizes of Floating Action Button (values: normal (default), mini)                         |
-|`app:fabText`         |Text label of Floating Action Button                                                     |
-|`app:fabTextAllCaps`  |Set text label all capitals                                                              |
-|`app:fabTextColor`    |Set custom color for text label                                                          |
-|`app:fabElevation`    |Change the elevation of view                                                             |
-|`app:fabColor`        |Custom color for Floating Action Button (default value is accent color)                  |
-|`app:fabIcon`         |Custom icon for Floating Action Button                                                   |
-|`app:fabIconColor`    |Custom color for icon                                                                    |
-|`app:fabIconPosition` |Icon position for icon (values: start (default), top, end, bottom)                       |
-|                      |                                                                                         |
-|`app:fabMenuStyle`    |Animation style for items appearing (values: popUp (default), popDown, popRight, popLeft)|
-|`app:fabMenuGravity`  |Gravity of menu and items (values: start (default), end, bottom, top, center_horizontal, center_vertical, center)|
-|`app:fabAnimateMenu`  |Flag to animate menu toggle                                                              |
+|Custom Atributes        |Description                                                                              |
+|------------------------|-----------------------------------------------------------------------------------------|
+|`app:fabType`           |Visual style of Floating Action Button (values: circle (default), square, roundedSquare) |
+|`app:fabSizes`          |Sizes of Floating Action Button (values: normal (default), mini)                         |
+|`app:fabElevation`      |Change the elevation of view                                                             |
+|`app:fabColor`          |Custom color for Floating Action Button (default value is accent color)                  |
+|`app:fabIcon`           |Custom icon for Floating Action Button                                                   |
+|`app:fabIconColor`      |Custom color for icon                                                                    |
+|`app:fabRippleColor`    |Custom ripple color for button                                                           |
+|`app:fabIconPosition`   |Icon position for icon (values: start (default), top, end, bottom)                       |
+|`app:fabMenuStyle`      |Animation style for items appearing (values: popUp (default), popDown, popRight, popLeft)|
+|`android:gravity`       |Gravity of menu and items                                                                |
+|`app:fabAnimateMenu`    |Flag to animate menu toggle                                                              |
+|`app:fabAnimateDuration`|Flag to animate menu toggle                                                              |
 
-### Customizing from Java
+You can set a text and customize it using 'android' namespace like on a normal Button or TextView.
 
-```java
-    floatingActionButton.setFabType();          /* Set button type | FloatingActionButton.FAB_TYPE_CIRCLE, 
-                                                    FloatingActionButton.FAB_TYPE_SQUARE, 
-                                                    FloatingActionButton.FAB_TYPE_ROUNDED_SQUARE */                           
-    floatingActionButton.setFabSize();          /* Set button size | CustomFloatingActionButton.FAB_SIZE_NORMAL, 
-                                                    CustomFloatingActionButton.FAB_SIZE_MINI */
-    floatingActionButton.setFabText();          // Set text label
-    floatingActionButton.setFabTextAllCaps();   // Set label all capitals
-    floatingActionButton.setFabTextColor();     // Change color of label
-    floatingActionButton.setFabElevation();     // Change elevation
-    floatingActionButton.setFabColor();         // Change background color
-    floatingActionButton.setFabIcon();          // Change icon
-    floatingActionButton.setFabIconColor();     // Change icon color
-    floatingActionButton.setFabIconPosition();  /* Change icon position | CustomFloatingActionButton.FAB_ICON_START, 
-                                                    CustomFloatingActionButton.FAB_ICON_TOP,
-                                                    CustomFloatingActionButton.FAB_ICON_END, 
-                                                    CustomFloatingActionButton.FAB_ICON_BOTTOM */
+### Customizing from code
+
+```kotlin
+    floatingActionButton.fabType = FabType.FAB_TYPE_CIRCLE  /* Set button type FabType.FAB_TYPE_CIRCLE, 
+                                                                               FabType.FAB_TYPE_SQUARE, 
+                                                                               FabType.FAB_TYPE_ROUNDED_SQUARE */                           
+    floatingActionButton.fabSize = FabSize.FAB_SIZE_MINI    /* Set button size FabSize.FAB_SIZE_NORMAL, 
+                                                                               FabSize.FAB_SIZE_MINI */
+    
+    floatingActionButton.fabElevation = 7f                  // Change elevation
+    floatingActionButton.fabColor = myFabColor              // Change background color
+    floatingActionButton.fabIcon = myFabIconDrawable        // Change icon
+    floatingActionButton.fabIconColor = myFabIconColor      // Change icon color
+    floatingActionButton.fabRippleColor = myFabRippleColor  // Change ripple color
+    floatingActionButton.fabIconPosition = FabIconPosition.FAB_ICON_START /* Change icon position                   
+                                                                               FabIconPosition.FAB_ICON_START, 
+                                                                               FabIconPosition.FAB_ICON_TOP,
+                                                                               FabIconPosition.FAB_ICON_END, 
+                                                                               FabIconPosition.FAB_ICON_BOTTOM */
 ```
 
-```java
-    floatingActionLayout.setFabType();          /* Set button type | FloatingActionLayout.FAB_TYPE_CIRCLE, 
-                                                    FloatingActionLayout.FAB_TYPE_SQUARE, 
-                                                    FloatingActionLayout.FAB_TYPE_ROUNDED_SQUARE */   
-    floatingActionLayout.setFabElevation();     // Change elevation
-    floatingActionLayout.setFabColor();         // Change background color
+```kotlin
+    floatingActionLayout.fabType = FabType.FAB_TYPE_CIRCLE  /* Set button type FabType.FAB_TYPE_CIRCLE, 
+                                                                               FabType.FAB_TYPE_SQUARE, 
+                                                                               FabType.FAB_TYPE_ROUNDED_SQUARE */     
+    floatingActionLayout.fabElevation = 7f                  // Change elevation
+    floatingActionLayout.fabColor = myFabColor              // Change background color
+    floatingActionButton.fabRippleColor = myFabRippleColor  // Change ripple color
 ```
 
-```java
-        floatingLayout.setFabAnimationStyle();  /* Set the pop animation of items | FloatingLayout.ANIMATION_POP_UP, 
-                                                    FloatingLayout.ANIMATION_POP_DOWN,
-                                                    FloatingLayout.ANIMATION_POP_RIGHT,
-                                                    FloatingLayout.ANIMATION_POP_LEFT */
-        floatingLayout.setFabMenuGravity();     /* Set gravity of menu items | FloatingLayout.MENU_GRAVITY_START,
-                                                    FloatingLayout.MENU_GRAVITY_END,
-                                                    FloatingLayout.MENU_GRAVITY_BOTTOM,
-                                                    FloatingLayout.MENU_GRAVITY_TOP,
-                                                    FloatingLayout.MENU_GRAVITY_CENTER_HORIZONTAL,
-                                                    FloatingLayout.MENU_GRAVITY_CENTER_VERTICAL,
-                                                    FloatingLayout.MENU_GRAVITY_CENTER */
+```kotlin
+        floatingLayout.fabAnimationStyle = FabMenuAnimation.ANIMATION_POP_UP /* Set the pop animation of items 
+                                                                               FabMenuAnimation.ANIMATION_POP_UP, 
+                                                                               FabMenuAnimation.ANIMATION_POP_DOWN,
+                                                                               FabMenuAnimation.ANIMATION_POP_RIGHT,
+                                                                               FabMenuAnimation.ANIMATION_POP_LEFT */
 ```
 ### Setting Listeners
 
 ```java
+    //Java
     floatingLayout.setOnMenuExpandedListener(new FloatingLayout.OnMenuExpandedListener() {
             @Override
             public void onMenuExpanded() {
@@ -170,7 +166,26 @@ Add following line of code to your module(app) level gradle file
             }
         });
 ```
+
+```kotlin
+    //Kotlin
+    floatingLayout.doOnExpand {
+        // Do stuff when expanded...
+    }
+    
+    floatingLayout.doOnCollapse {
+        // Do stuff when collapsed...
+    }
+```
 ## Versions
+
+###  3.0.0
+
+New version fully rewritten in Kotlin with several bugfixes
+
+####  2.1.0
+
+Some bug fixing
 
 ###  2.0.0 - 2.0.4
 
