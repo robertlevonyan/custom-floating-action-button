@@ -1,0 +1,33 @@
+apply plugin: 'com.jfrog.bintray'
+
+version = '3.0.4'
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    archiveClassifier = 'sources'
+}
+
+artifacts {
+    archives sourcesJar
+}
+
+Properties properties = new Properties()
+properties.load( new FileInputStream("local.properties"))
+
+// Bintray
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    pkg {
+        repo = 'maven'
+        name = 'CustomFloatingActionButton'
+        configurations = ['archives']
+        desc = 'This view is for replacement of standard Floating Action Button from Google Support Library. It is easy to use, customizable and you can also add text to button.'
+        websiteUrl = 'https://github.com/robertlevonyan/customFloatingActionButton'
+        vcsUrl = 'https://github.com/robertlevonyan/customFloatingActionButton.git'
+        licenses = ["Apache-2.0"]
+        publish = true
+        publicDownloadNumbers = true
+    }
+}

@@ -37,12 +37,10 @@ class FloatingActionLayout : FrameLayout {
     constructor(context: Context) : this(context, null, 0)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-        initTypedArray(attrs)
+        attrs?.let { initTypedArray(it) } ?: initDefaultValues()
     }
 
-    private fun initTypedArray(attrs: AttributeSet?) {
-        if (attrs == null) return
-
+    private fun initTypedArray(attrs: AttributeSet) {
         val ta = context.theme.obtainStyledAttributes(attrs, R.styleable.FloatingActionButton, 0, 0)
 
         fabType = FabType.getByIndex(ta.getInt(R.styleable.FloatingActionButton_fabType, FabType.FAB_TYPE_CIRCLE.ordinal))
@@ -51,6 +49,13 @@ class FloatingActionLayout : FrameLayout {
         fabRippleColor = ta.getColor(R.styleable.FloatingActionButton_fabRippleColor, ContextCompat.getColor(context, R.color.colorPrimary))
 
         ta.recycle()
+    }
+
+    private fun initDefaultValues() {
+        fabType = FabType.FAB_TYPE_CIRCLE
+        fabElevation = resources.getDimension(R.dimen.fab_default_elevation)
+        fabColor = ContextCompat.getColor(context, R.color.colorAccent)
+        fabRippleColor = ContextCompat.getColor(context, R.color.colorPrimary)
     }
 
     private fun buildView() {
@@ -70,10 +75,10 @@ class FloatingActionLayout : FrameLayout {
             FabType.FAB_TYPE_ROUNDED_SQUARE -> R.drawable.fab_rounded_square_bg
             else -> R.drawable.fab_circle_bg
         })?.mutate()?.apply {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                mutate().colorFilter = BlendModeColorFilter(fabColor, BlendMode.SRC_IN)
+            mutate().colorFilter = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                BlendModeColorFilter(fabColor, BlendMode.SRC_IN)
             } else {
-                mutate().setColorFilter(fabColor, PorterDuff.Mode.SRC_IN)
+                PorterDuffColorFilter(fabColor, PorterDuff.Mode.SRC_IN)
             }
         } ?: return
 

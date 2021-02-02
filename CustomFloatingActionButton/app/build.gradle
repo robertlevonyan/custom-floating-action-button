@@ -1,14 +1,14 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.1"
+    compileSdkVersion 30
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 27
+        minSdkVersion 17
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -19,20 +19,15 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:27.0.2'
-    compile 'com.android.support:design:27.0.2'
-    testCompile 'junit:junit:4.12'
 }
 
-publish {
-    groupId = 'com.robertlevonyan.view'
-    artifactId = 'CustomFloatingActionButton'
-    publishVersion = '2.0.0'
-    desc = 'This view is for replacement of standard Floating Action Button from Google Support Library. It is easy to use, customizable and you can also add text to button'
-    licences = ['Apache-2.0']
-    website = 'https://github.com/robertlevonyan/materialChipView'
-}
+apply from: '../install.gradle'
+apply from: '../bintray.gradle'

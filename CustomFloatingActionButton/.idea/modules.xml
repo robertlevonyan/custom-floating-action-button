@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/CustomFloatingActionButton.iml" filepath="$PROJECT_DIR$/.idea/modules/CustomFloatingActionButton.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CustomFloatingActionButton.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CustomFloatingActionButton.app.iml" />
     </modules>
   </component>
 </project>

@@ -7,6 +7,7 @@ import android.content.Context
 import android.graphics.BlendMode
 import android.graphics.BlendModeColorFilter
 import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.LayerDrawable
 import android.os.Build
@@ -64,16 +65,14 @@ class FloatingActionButton : AppCompatTextView {
             buildView()
         }
 
-    constructor(context: Context?) : this(context, null, 0)
-    constructor(context: Context?, attrs: AttributeSet?) : this(context, attrs, 0)
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-        initTypedArray(attrs)
+    constructor(context: Context) : this(context, null, 0)
+    constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+        attrs?.let { initTypedArray(it) } ?: initDefaultValues()
         createTextParams()
     }
 
-    private fun initTypedArray(attrs: AttributeSet?) {
-        if (attrs == null) return
-
+    private fun initTypedArray(attrs: AttributeSet) {
         val ta = context.theme.obtainStyledAttributes(attrs, R.styleable.FloatingActionButton, 0, 0)
 
         fabType = FabType.getByIndex(ta.getInt(R.styleable.FloatingActionButton_fabType, FabType.FAB_TYPE_CIRCLE.ordinal))
@@ -87,6 +86,16 @@ class FloatingActionButton : AppCompatTextView {
         fabRippleColor = ta.getColor(R.styleable.FloatingActionButton_fabRippleColor, ContextCompat.getColor(context, R.color.colorPrimary))
 
         ta.recycle()
+    }
+
+    private fun initDefaultValues() {
+        fabType = FabType.FAB_TYPE_CIRCLE
+        fabSize = FabSize.FAB_SIZE_NORMAL
+        fabElevation = resources.getDimension(R.dimen.fab_default_elevation)
+        fabColor = ContextCompat.getColor(context, R.color.colorAccent)
+        fabIconColor = ContextCompat.getColor(context, R.color.colorFabIcon)
+        fabIconPosition = FabIconPosition.FAB_ICON_START
+        fabRippleColor = ContextCompat.getColor(context, R.color.colorPrimary)
     }
 
     private fun buildView() {
@@ -112,10 +121,10 @@ class FloatingActionButton : AppCompatTextView {
             FabType.FAB_TYPE_ROUNDED_SQUARE -> R.drawable.fab_rounded_square_bg
             else -> R.drawable.fab_circle_bg
         })?.mutate()?.apply {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                mutate().colorFilter = BlendModeColorFilter(fabColor, BlendMode.SRC_IN)
+            mutate().colorFilter = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                BlendModeColorFilter(fabColor, BlendMode.SRC_IN)
             } else {
-                mutate().setColorFilter(fabColor, PorterDuff.Mode.SRC_IN)
+                PorterDuffColorFilter(fabColor, PorterDuff.Mode.SRC_IN)
             }
         } ?: return
 
@@ -133,10 +142,11 @@ class FloatingActionButton : AppCompatTextView {
         val w = fabIcon!!.intrinsicWidth
         fabIcon!!.setBounds(0, 0, w, h)
         fabIcon?.apply {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                mutate().colorFilter = BlendModeColorFilter(fabIconColor, BlendMode.SRC_IN)
+            mutate().colorFilter = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                BlendModeColorFilter(fabIconColor, BlendMode.SRC_IN)
             } else {
-                mutate().setColorFilter(fabIconColor, PorterDuff.Mode.SRC_IN)
+                PorterDuffColorFilter(fabIconColor, PorterDuff.Mode.SRC_IN)
+
             }
         }
 

@@ -40,12 +40,10 @@ class FloatingLayout : FrameLayout {
     constructor(context: Context) : this(context, null, 0)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-        initTypedArray(attrs)
+        attrs?.let { initTypedArray(it) } ?: initDefaultValues()
     }
 
-    private fun initTypedArray(attrs: AttributeSet?) {
-        if (attrs == null) return
-
+    private fun initTypedArray(attrs: AttributeSet) {
         val ta = context.theme.obtainStyledAttributes(attrs, R.styleable.FloatingActionButton, 0, 0)
 
         fabAnimationStyle = FabMenuAnimation.getByIndex(ta.getInt(R.styleable.FloatingActionButton_fabMenuStyle, FabMenuAnimation.ANIMATION_POP_UP.ordinal))
@@ -54,6 +52,13 @@ class FloatingLayout : FrameLayout {
         fabAnimateDuration = ta.getInt(R.styleable.FloatingActionButton_fabAnimateDuration, 300)
 
         ta.recycle()
+    }
+
+    private fun initDefaultValues() {
+        fabAnimationStyle = FabMenuAnimation.ANIMATION_POP_UP
+        fabMenuGravity = Gravity.TOP
+        fabAnimateMenu = true
+        fabAnimateDuration = 300
     }
 
     private fun buildView() {
