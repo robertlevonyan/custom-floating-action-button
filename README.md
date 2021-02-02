@@ -11,7 +11,7 @@
 Add following line of code to your module(app) level gradle file
 
 ```groovy
-    implementation 'com.robertlevonyan.view:CustomFloatingActionButton:3.0.1'
+    implementation 'com.robertlevonyan.view:CustomFloatingActionButton:3.0.4'
 ```
 
 #### Maven:
@@ -20,7 +20,7 @@ Add following line of code to your module(app) level gradle file
   <dependency>
     <groupId>com.robertlevonyan.view</groupId>
     <artifactId>CustomFloatingActionButton</artifactId>
-    <version>3.0.1</version>
+    <version>3.0.4</version>
     <type>pom</type>
   </dependency>
 ```
@@ -179,8 +179,8 @@ You can set a text and customize it using 'android' namespace like on a normal B
 ```
 ## Versions
 
-####  3.0.1
-Small update
+####  3.0.1 - 3.0.4
+Small updates
 
 ###  3.0.0
 
