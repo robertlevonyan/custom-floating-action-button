@@ -26,19 +26,13 @@ public class MainActivity extends AppCompatActivity {
 
         final String text = "Next";
         floatingActionButton.setText(text);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                floatingActionButton.setText("Clicked");
-                Toast.makeText(MainActivity.this, "Clicked!", Toast.LENGTH_SHORT).show();
-            }
+        floatingActionButton.setOnClickListener(view -> {
+            floatingActionButton.setText("Clicked");
+            Toast.makeText(MainActivity.this, "Clicked!", Toast.LENGTH_SHORT).show();
         });
 
-        floatingActionLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        floatingActionLayout.setOnClickListener(view -> {
 
-            }
         });
 
         floatingLayout.setOnMenuExpandedListener(new FloatingLayout.OnMenuExpandedListener() {
