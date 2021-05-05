@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FloatingActionButton">
+        <attr name="fabType" format="enum">
+            <enum name="circle" value="0" />
+            <enum name="square" value="1" />
+            <enum name="roundedSquare" value="2" />
+        </attr>
+        <attr name="fabSizes" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="mini" value="1" />
+        </attr>
+        <attr name="fabElevation" format="dimension" />
+        <attr name="fabColor" format="color" />
+        <attr name="fabIcon" format="integer" />
+        <attr name="fabIconColor" format="color" />
+        <attr name="fabRippleColor" format="color" />
+        <attr name="fabIconPosition" format="enum">
+            <enum name="start" value="0" />
+            <enum name="top" value="1" />
+            <enum name="end" value="2" />
+            <enum name="bottom" value="3" />
+        </attr>
+        <attr name="fabMenuStyle" format="enum">
+            <enum name="popUp" value="0" />
+            <enum name="popDown" value="1" />
+            <enum name="popRight" value="2" />
+            <enum name="popLeft" value="3" />
+        </attr>
+        <attr name="fabAnimateMenu" format="boolean" />
+        <attr name="fabAnimateDuration" format="integer" />
+        <attr name="android:gravity" />
+    </declare-styleable>
+</resources>
