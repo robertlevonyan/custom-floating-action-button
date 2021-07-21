@@ -193,6 +193,10 @@ You can set a text and customize it using 'android' namespace like on a normal B
 ```
 ## Versions
 
+### 3.1.1
+
+SDK 31 ready
+
 #### 3.1.0
 
 Migration to mavenCentral
