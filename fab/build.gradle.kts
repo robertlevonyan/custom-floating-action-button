@@ -5,12 +5,10 @@ plugins {
 }
 
 android {
-  compileSdkVersion(31)
+  compileSdk = 31
   defaultConfig {
-    minSdkVersion(17)
-    targetSdkVersion(31)
-    versionCode = 1
-    versionName = "1.0"
+    minSdk = 17
+    targetSdk = 31
     vectorDrawables.useSupportLibrary = true
   }
   buildTypes {
@@ -29,15 +27,15 @@ android {
 }
 
 allprojects {
-    plugins.withId("com.vanniktech.maven.publish") {
-        mavenPublish {
-            sonatypeHost = com.vanniktech.maven.publish.SonatypeHost.S01
-        }
+  plugins.withId("com.vanniktech.maven.publish") {
+    mavenPublish {
+      sonatypeHost = com.vanniktech.maven.publish.SonatypeHost.S01
     }
+  }
 }
 
 dependencies {
   implementation(kotlin("stdlib"))
-  implementation("androidx.appcompat:appcompat:1.3.0")
+  implementation("androidx.appcompat:appcompat:1.3.1")
   implementation("com.google.android.material:material:1.4.0")
 }
