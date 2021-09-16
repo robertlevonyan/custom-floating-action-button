@@ -193,7 +193,7 @@ You can set a text and customize it using 'android' namespace like on a normal B
 ```
 ## Versions
 
-### 3.1.1 - 3.1.3
+### 3.1.1 - 3.1.4
 
 Update to Java 11
 SDK 31 ready
