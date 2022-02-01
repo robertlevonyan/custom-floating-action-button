@@ -1,6 +1,6 @@
 # Custom Floating Action Button
 
-|This view is for replacement of standard Floating Action Button from Google Support Library. It is easy to use, customizable and you can also add text to button|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab.png"  width="900" />|
+|This view is for replacement of standard Floating Action Button from Google Support Library. It is easy to use, customizable and you can also add text to button|<img src="https://github.com/robertlevonyan/custom-floating-action-button/blob/master/Images/fab.png"  width="900" />|
 |----------------------------------------------------------------------------------------------|-----------|
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Custom%20Floating%20Action%20Button-yellow.svg?style=flat-square)](https://android-arsenal.com/details/1/6570) [![API](https://img.shields.io/badge/API-17%2B-yellow.svg?style=flat-square)](https://android-arsenal.com/api?level=14) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.robertlevonyan.view/CustomFloatingActionButton/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.robertlevonyan.view/CustomFloatingActionButton)
@@ -49,10 +49,10 @@ Add following line of code to your module(app) level gradle file
     android:layout_gravity="bottom|end" />
 ```
 
-|![](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_circle_2.jpg)|![](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_circle_text_2.jpg)|
+|![](https://github.com/robertlevonyan/custom-floating-action-button/blob/master/Images/fab_circle_2.jpg)|![](https://github.com/robertlevonyan/custom-floating-action-button/blob/master/Images/fab_circle_text_2.jpg)|
 |----------------------|-----------------------------------------------------------------------------------------|
-|![](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_rounded_square_2.jpg)|![](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_rounded_square_text_2.jpg)|
-|![](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_square_2.jpg)|![](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fab_square_text_2.jpg)|
+|![](https://github.com/robertlevonyan/custom-floating-action-button/blob/master/Images/fab_rounded_square_2.jpg)|![](https://github.com/robertlevonyan/custom-floating-action-button/blob/master/Images/fab_rounded_square_text_2.jpg)|
+|![](https://github.com/robertlevonyan/custom-floating-action-button/blob/master/Images/fab_square_2.jpg)|![](https://github.com/robertlevonyan/custom-floating-action-button/blob/master/Images/fab_square_text_2.jpg)|
 
 ```xml
 <com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingActionLayout
@@ -68,7 +68,7 @@ Add following line of code to your module(app) level gradle file
 
 |Circle layout                          |Rounded square layout                   |Square layout                         |
 |---------------------------------------|----------------------------------------|--------------------------------------|
-|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_circle_2.jpg" width="270">|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_rounded_square_2.jpg" width="270">|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fal_square_2.jpg" width="270">|
+|<img src="https://github.com/robertlevonyan/custom-floating-action-button/blob/master/Images/fal_circle_2.jpg" width="270">|<img src="https://github.com/robertlevonyan/custom-floating-action-button/blob/master/Images/fal_rounded_square_2.jpg" width="270">|<img src="https://github.com/robertlevonyan/custom-floating-action-button/blob/master/Images/fal_square_2.jpg" width="270">|
 
 ```xml
 <com.robertlevonyan.examples.customfloatingactionbutton.view.FloatingLayout
@@ -104,9 +104,9 @@ Add following line of code to your module(app) level gradle file
 
 |Up                          |Down                   |Right                         |Left                         |
 |----------------------------|-----------------------|------------------------------|-----------------------------|
-|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fl_up_2.jpg" width="200">|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fl_down_2.jpg" width="200">|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fl_right_2.jpg" width="200">|<img src="https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fl_left_2.jpg" width="200">|
+|<img src="https://github.com/robertlevonyan/custom-floating-action-button/blob/master/Images/fl_up_2.jpg" width="200">|<img src="https://github.com/robertlevonyan/custom-floating-action-button/blob/master/Images/fl_down_2.jpg" width="200">|<img src="https://github.com/robertlevonyan/custom-floating-action-button/blob/master/Images/fl_right_2.jpg" width="200">|<img src="https://github.com/robertlevonyan/custom-floating-action-button/blob/master/Images/fl_left_2.jpg" width="200">|
 
-![](https://github.com/robertlevonyan/customFloatingActionButton/blob/master/Images/fl_expand_collapse_2.gif)
+![](https://github.com/robertlevonyan/custom-floating-action-button/blob/master/Images/fl_expand_collapse_2.gif)
 
 ### Attributes
 
@@ -233,6 +233,10 @@ First version of library with some bugfixes
 - **Twitter**: https://twitter.com/@RobertLevonyan
 - **Facebook**: https://facebook.com/robert.levonyan
 - **Google Play**: https://play.google.com/store/apps/dev?id=5477562049350283357
+
+<a href="https://www.buymeacoffee.com/robertlevonyan">
+  <img src="https://github.com/robertlevonyan/custom-floating-action-button/blob/master/Images/coffee.jpeg"  width="300" />
+</a>
 
 ## Licence
 

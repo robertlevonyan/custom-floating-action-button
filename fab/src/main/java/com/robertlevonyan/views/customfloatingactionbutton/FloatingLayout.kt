@@ -133,7 +133,7 @@ class FloatingLayout : FrameLayout {
         }
     }
 
-    private fun collapse() {
+    fun collapse() {
         when (fabAnimationStyle) {
             FabMenuAnimation.ANIMATION_POP_LEFT -> collapseDirection(View.TRANSLATION_X, -1)
             FabMenuAnimation.ANIMATION_POP_UP -> collapseDirection(View.TRANSLATION_Y, -1)
@@ -179,7 +179,7 @@ class FloatingLayout : FrameLayout {
         }.start()
     }
 
-    private fun expand() {
+    fun expand() {
         when (fabAnimationStyle) {
             FabMenuAnimation.ANIMATION_POP_LEFT -> expandDirection(View.TRANSLATION_X, -1)
             FabMenuAnimation.ANIMATION_POP_UP -> expandDirection(View.TRANSLATION_Y, -1)
