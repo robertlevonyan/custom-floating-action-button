@@ -5,10 +5,10 @@ plugins {
 }
 
 android {
-  compileSdk = 31
+  compileSdk = 32
   defaultConfig {
     minSdk = 17
-    targetSdk = 31
+    targetSdk = 32
     vectorDrawables.useSupportLibrary = true
   }
   buildTypes {
@@ -36,6 +36,6 @@ allprojects {
 
 dependencies {
   implementation(kotlin("stdlib"))
-  implementation("androidx.appcompat:appcompat:1.3.1")
-  implementation("com.google.android.material:material:1.4.0")
+  implementation("androidx.appcompat:appcompat:1.4.1")
+  implementation("com.google.android.material:material:1.5.0")
 }
